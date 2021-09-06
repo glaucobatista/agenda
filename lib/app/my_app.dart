@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Agenda',
+      title: 'Agenda de Contatos',
       theme: ThemeData(
         // This is the theme of your application.
         primarySwatch: Colors.blue,

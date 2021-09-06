@@ -10,7 +10,7 @@ class _ContatosFormState extends State<ContatosForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastro de Contatos'),
+        title: Text('Cadastro de Contatos da Agenda'),
       ),
     );
   }
