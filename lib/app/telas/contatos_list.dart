@@ -1,9 +1,7 @@
-import 'package:agenda/app/database/sqlite/conexao.dart';
-import 'package:agenda/app/database/sqlite/script.dart';
+import 'package:agenda/app/database/sqlite/dao/contato_dao_impl.dart';
+import 'package:agenda/app/dominio/entidades/contato.dart';
 import 'package:agenda/app/my_app.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
 
 class ContatosList extends StatelessWidget {
   final lista = [
@@ -27,9 +25,8 @@ class ContatosList extends StatelessWidget {
     },
   ];
 
-  Future<List<Map<String, dynamic>>> _buscarDados() async {
-    Database db = await Conexao.get();
-    return db.query('contato');
+  Future<List<Contato>> _buscarDados() async {
+    return ContatoDaoImpl().find();
   }
 
   @override
@@ -38,7 +35,7 @@ class ContatosList extends StatelessWidget {
         future: _buscarDados(),
         builder: (context, futuro) {
           if (futuro.hasData) {
-            var lista = futuro.data;
+            List<Contato> lista = futuro.data;
             return Scaffold(
               appBar: AppBar(
                 title: Text('Lista de Contatos'),
@@ -56,12 +53,12 @@ class ContatosList extends StatelessWidget {
                 itemBuilder: (context, i) {
                   var contato = lista[i];
                   var avatar = CircleAvatar(
-                    backgroundImage: NetworkImage(contato['url_avatar']),
+                    backgroundImage: NetworkImage(contato.urlAvatar),
                   );
                   return ListTile(
                     leading: avatar,
-                    title: Text(contato['nome']),
-                    subtitle: Text(contato['telefone']),
+                    title: Text(contato.nome),
+                    subtitle: Text(contato.telefone),
                     trailing: Container(
                       width: 100,
                       child: Row(

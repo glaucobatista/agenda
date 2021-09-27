@@ -1,4 +1,8 @@
+import 'package:agenda/app/injecao.dart';
 import 'package:agenda/app/my_app.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setupInjection();
+  runApp(MyApp());
+}
