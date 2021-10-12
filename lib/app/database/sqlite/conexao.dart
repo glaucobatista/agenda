@@ -8,6 +8,7 @@ class Conexao {
   static Future<Database> get() async {
     if (_db == null) {
       var caminho = join(await getDatabasesPath(), 'agenda_contatos');
+      deleteDatabase(caminho);
       _db = await openDatabase(
         caminho,
         version: 1,

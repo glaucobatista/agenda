@@ -1,7 +1,7 @@
 final criarTabela = '''
 
 CREATE TABLE contato(
-  id INT PRIMARY KEY,
+  id INTEGER NOT NULL PRIMARY KEY,
   nome VARCHAR(250) NOT NULL,
   telefone CHAR(16) NOT NULL,
   email VARCHAR(150) NOT NULL,
