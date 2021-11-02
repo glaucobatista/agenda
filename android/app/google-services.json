@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "906958401964",
+    "project_id": "agenda-5e916",
+    "storage_bucket": "agenda-5e916.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906958401964:android:257986e09a5043ecce0a09",
+        "android_client_info": {
+          "package_name": "br.com.glauco.agenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906958401964-c42vanvvejn3qokgejvv499fu8ogh9rm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChgUxMdrgt-xO5YdYP0u1pKR3bFxj6fIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906958401964-c42vanvvejn3qokgejvv499fu8ogh9rm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

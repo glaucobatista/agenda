@@ -13,7 +13,7 @@ class ContatoServico {
     _dao.save(contato);
   }
 
-  remove(int id) {
+  remove(dynamic id) {
     _dao.remove(id);
   }
 

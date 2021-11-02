@@ -23,7 +23,7 @@ class ContatoDaoImpl implements ContatoDao {
   }
 
   @override
-  remove(int id) async {
+  remove(dynamic id) async {
     _db = await Conexao.get();
     var sql = 'DELETE FROM contato WHERE id = ?';
     _db.rawDelete(sql, [id]);

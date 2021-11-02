@@ -39,7 +39,7 @@ abstract class _ContatosListBack with Store {
   }
 
 //excluir
-  remover(int id) {
+  remover(dynamic id) {
     _service.remove(id);
     refreshList();
   }
