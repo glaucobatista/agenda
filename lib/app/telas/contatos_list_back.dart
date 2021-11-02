@@ -33,6 +33,11 @@ abstract class _ContatosListBack with Store {
         .then(refreshList);
   }
 
+  goToDetalhes(BuildContext context, Contato contato) {
+    Navigator.of(context)
+        .pushNamed(MyApp.CONTATOS_DETALHES, arguments: contato);
+  }
+
 //excluir
   remover(int id) {
     _service.remove(id);

@@ -99,6 +99,9 @@ class ContatosList extends StatelessWidget {
                       return ListTile(
                         leading: circleAvatar(contato.urlAvatar),
                         title: Text(contato.nome),
+                        onTap: () {
+                          _back.goToDetalhes(context, contato);
+                        },
                         subtitle: Text(contato.telefone),
                         trailing: Container(
                           width: 100,
