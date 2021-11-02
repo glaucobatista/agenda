@@ -43,7 +43,8 @@ class ContatoServico {
   }
 
   validarTelefone(String telefone) {
-    var formato = RegExp(r'^\([1-9]{2}\)[9][6-9]{1}[0-9]{3}\-[0-9]{4}$');
+    // var formato = RegExp(r'^\([1-9]{2}\)[9][6-9]{1}[0-9]{3}\-[0-9]{4}$');
+    var formato = RegExp(r'^\([1-9]{2}\) [9] [6-9]{1}[0-9]{3}\-[0-9]{4}$');
     if (telefone == null) {
       throw new CamadaExcessoes('O telefone é obrigatório');
     } else if (!formato.hasMatch(telefone)) {

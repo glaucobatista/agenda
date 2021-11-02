@@ -1,5 +1,4 @@
 import 'package:agenda/app/dominio/entidades/contato.dart';
-import 'package:agenda/app/my_app.dart';
 import 'package:agenda/app/telas/contatos_list_back.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -8,11 +7,10 @@ class ContatosList extends StatelessWidget {
   final _back = ContatosListBack();
 
   CircleAvatar circleAvatar(String url) {
-    try {
-      return CircleAvatar(backgroundImage: NetworkImage(url));
-    } catch (e) {
-      return CircleAvatar(child: Icon(Icons.person));
-    }
+    //operador ternário if
+    return (Uri.tryParse(url).isAbsolute)
+        ? CircleAvatar(backgroundImage: NetworkImage(url))
+        : CircleAvatar(child: Icon(Icons.person));
   }
 
   Widget iconEditButton(Function quandoPressionado) {
@@ -78,7 +76,7 @@ class ContatosList extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
-                Navigator.of(context).pushNamed(MyApp.CONTATOS_FORM);
+                _back.goToForm(context);
               },
             )
           ],
